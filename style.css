@@ -479,3 +479,67 @@ input:focus, select:focus, textarea:focus{
   .btn{ width: 100%; }
   .drawer-nav a{ padding: 14px 12px; }
 }
+/* =========================
+   HERO – WOOD OVERLAY + LOGO
+   ========================= */
+
+.hero{
+  position: relative;
+  overflow: hidden;
+  background: url("img/hero.jpg") center/cover no-repeat;
+  color: #FFFFFF;
+}
+
+/* Wood overlay */
+.hero-wood .hero-overlay{
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(31,63,54,.55),   /* tumšs zaļš augšā */
+      rgba(139,106,79,.55) /* wood apakšā */
+    );
+  z-index: 1;
+}
+
+/* Viss hero saturs virs overlay */
+.hero > *{
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo stūrī */
+.hero-brand{
+  position: absolute;
+  top: 22px;
+  left: 22px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-logo{
+  font-weight: 800;
+  letter-spacing: .14em;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.hero-tagline{
+  font-size: 11px;
+  letter-spacing: .18em;
+  opacity: .85;
+}
+
+/* Mobile pielāgojums */
+@media (max-width: 900px){
+  .hero-brand{
+    top: 14px;
+    left: 14px;
+  }
+  .hero-logo{
+    font-size: 16px;
+  }
+}
