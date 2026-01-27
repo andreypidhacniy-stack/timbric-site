@@ -46,12 +46,12 @@ a{color:inherit;text-decoration:none}
   text-decoration:none;
 }
 .logo-svg{
-  height: 28px;
+  height: 34px;
   width: auto;
   display:block;
 }
 @media (max-width:900px){
-  .logo-svg{ height: 22px; }
+  .logo-svg{ height: 26px; }
 }
 .logo.small{letter-spacing:.10em;font-size:14px}
 .menu{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
