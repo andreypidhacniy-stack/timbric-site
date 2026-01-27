@@ -1,11 +1,18 @@
 :root{
-  --bg:#070a09;
-  --card:#111615;
-  --text:#e8efe9;
-  --muted:#b7c3bb;
-  --line:#1d2522;
-  --acc:#1a2a24;
-  --acc2:#244035;
+  /* Backgrounds */
+  --bg:#F5F7F6;        /* Snow white – galvenais fons */
+  --card:#FFFFFF;     /* Kartes / sekcijas */
+
+  /* Text */
+  --text:#1F1F1F;     /* Galvenais teksts */
+  --muted:#8E9491;    /* Palīgteksts */
+
+  /* Lines / borders */
+  --line:#E3E7E5;     /* Smalkas līnijas */
+
+  /* Brand accents */
+  --acc:#2F5D50;      /* TIMBRIC zaļais (CTA, linki) */
+  --acc2:#1F3F36;     /* Tumšāks zaļais (hover, footer) */
 }
 
 *{box-sizing:border-box}
