@@ -27,7 +27,32 @@
   <header class="header">
     <div class="container nav">
       <a class="logo" href="#top" aria-label="TIMBRIC">TIMBRIC</a>
+      
+<!-- HAMBURGER POGA (mobile only) -->
+      
+<button class="burger" aria-label="Atvērt izvēlni" aria-controls="mobileMenu" aria-expanded="false">
+  <span></span><span></span><span></span>
+</button>
 
+<div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+
+<aside class="drawer" id="mobileMenu" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-logo">TIMBRIC</div>
+    <button class="drawer-close" aria-label="Aizvērt izvēlni">✕</button>
+  </div>
+            <!-- DESKTOP MENU -->
+  
+  <nav class="drawer-nav">
+    <a href="#produkti">Produkti</a>
+    <a href="#modelis">3×6</a>
+    <a href="#spec">Specifikācija</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a class="btn drawer-cta" href="#kontakti">Saņemt piedāvājumu</a>
+  </nav>
+</aside>
+      
       <nav class="menu" aria-label="Galvenā navigācija">
         <a href="#produkti">Produkti</a>
         <a href="#modelis">3×6</a>
