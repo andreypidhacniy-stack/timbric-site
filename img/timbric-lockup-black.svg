@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 180" role="img" aria-label="TIMBRIC logo">
+  <title>TIMBRIC — MODUĻU PIRTS NO KOKA</title>
+
+  <style>
+    .word {
+      font-family: "Montserrat", "Poppins", Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      fill: #1F1F1F;
+    }
+    .tag {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      fill: #1F1F1F;
+      opacity: 0.78;
+    }
+  </style>
+
+  <!-- LOGOMARK -->
+  <g transform="translate(20,24)" fill="#1F1F1F">
+    <rect x="0" y="18" width="46" height="104" rx="2"></rect>
+    <rect x="56" y="0" width="46" height="122" rx="2"></rect>
+    <path d="M118 44 L178 76 L178 122 L118 122 Z"></path>
+    <path d="M46 94 L98 26" stroke="rgba(255,255,255,0.00)" stroke-width="18"></path>
+  </g>
+
+  <!-- WORDMARK -->
+  <text x="240" y="92" class="word" font-size="92">TIMBRIC</text>
+
+  <!-- TAGLINE -->
+  <text x="240" y="142" class="tag" font-size="22">MODUĻU PIRTS NO KOKA</text>
+</svg>
