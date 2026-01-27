@@ -1,14 +1,14 @@
 :root{
   /* Backgrounds */
-  --bg:#F5F7F6;        /* Snow white – galvenais fons */
+  --bg:#F1ECE6;        /* siltāks, wood-tint fons */
   --card:#FFFFFF;     /* Kartes / sekcijas */
 
   /* Text */
   --text:#1F1F1F;     /* Galvenais teksts */
-  --muted:#8E9491;    /* Palīgteksts */
+  --muted:#7E857F;    /* Palīgteksts */
 
   /* Lines / borders */
-  --line:#E3E7E5;     /* Smalkas līnijas */
+  --line:#E6DED6;     /* Smalkas līnijas */
 
   /* Brand accents */
   --acc:#2F5D50;      /* TIMBRIC zaļais (CTA, linki) */
@@ -322,4 +322,160 @@ textarea{resize:vertical}
     align-items:center;
     justify-content:center;
   }
+}
+
+/* =========================
+   TIMBRIC BRAND POLISH (WOOD / PREMIUM)
+   Ielīmē style.css beigās
+   ========================= */
+
+/* Globālā “premium” sajūta */
+body{
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Konsekventi virsraksti */
+h1, h2, h3{
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  color: var(--text);
+}
+h2{ margin: 0 0 10px; }
+h3{ margin: 0 0 8px; }
+
+.lead{
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* Linki */
+a{
+  color: var(--acc);
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Sekcijas – vairāk “elpas” */
+.section{
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
+}
+.section.alt{
+  background: var(--card);
+}
+
+/* Kartes – siltas, premium */
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 18px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+}
+.card p{
+  color: var(--muted);
+}
+
+/* Pogas – vienots CTA stils */
+.btn{
+  background: var(--acc);
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: transform .12s ease, background .18s ease, box-shadow .18s ease;
+  box-shadow: 0 10px 22px rgba(47,93,80,.18);
+}
+.btn:hover{
+  background: var(--acc2);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+.btn:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(47,93,80,.14);
+}
+
+/* Secondary poga – “wood/premium” */
+.btn.secondary{
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: none;
+}
+.btn.secondary:hover{
+  background: rgba(139,106,79,.10); /* wood tint */
+  border-color: rgba(139,106,79,.25);
+  transform: translateY(-1px);
+}
+
+/* Focus (pieejamība) – lai klaviatūrai redzams */
+:focus-visible{
+  outline: 3px solid rgba(47,93,80,.35);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* Formas – premium */
+input, select, textarea{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 12px;
+  background: #fff;
+  color: var(--text);
+}
+input:focus, select:focus, textarea:focus{
+  outline: none;
+  border-color: rgba(47,93,80,.55);
+  box-shadow: 0 0 0 4px rgba(47,93,80,.12);
+}
+
+/* Header – gaišs, premium */
+.header{
+  background: rgba(241,236,230,.85); /* siltāks stikla efekts */
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+
+/* Footer – tumšais zaļais */
+.footer{
+  background: var(--acc2);
+  color: #fff;
+}
+.footer a{
+  color: #fff;
+  opacity: .92;
+}
+.footer a:hover{
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.footer .muted{
+  color: rgba(255,255,255,.72);
+}
+
+/* Mobilais drawer – lai saskan ar siltumu */
+.drawer{
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Mazliet lielāki tap target uz mobilā */
+@media (max-width: 900px){
+  .section{ padding: 44px 0; }
+  .btn{ width: 100%; }
+  .drawer-nav a{ padding: 14px 12px; }
 }
