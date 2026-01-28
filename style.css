@@ -592,7 +592,7 @@ input:focus, select:focus, textarea:focus{
   min-height: calc(100vh - 76px); /* 76px ≈ header height */
   display: flex;
   align-items: center;
-  background: url("/img/hero.jpg") center/cover no-repeat;
+  background: url("/img/hero_orig.jpg") center/cover no-repeat;
   color: #FFFFFF;
   border-bottom: 1px solid var(--line);
 }
