@@ -594,3 +594,30 @@ input:focus, select:focus, textarea:focus{
   padding-top: 96px;   /* header augstums */
   padding-bottom: 0;   /* ❗ noņem apakšējo padding */
 }
+/* ===== FINAL HERO FIX ===== */
+.hero{
+  min-height: 100vh;
+  padding: 96px 0 0;        /* pārraksta visus iepriekšējos padding */
+  display: flex;
+  align-items: stretch;
+}
+
+.hero-grid{
+  width: 100%;
+  min-height: calc(100vh - 96px);
+  align-items: stretch;
+}
+
+.hero .hero-card{
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.hero .hero-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;         /* vai 20px, ja gribi */
+}
