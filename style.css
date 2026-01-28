@@ -585,3 +585,12 @@ input:focus, select:focus, textarea:focus{
 .hero .hero-img{
   border-radius: 0;
 }
+/* =========================
+   HERO – FULL SCREEN OVERRIDE
+========================= */
+
+.hero{
+  min-height: 100vh;
+  padding-top: 96px;   /* header augstums */
+  padding-bottom: 0;   /* ❗ noņem apakšējo padding */
+}
