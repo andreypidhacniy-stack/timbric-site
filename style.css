@@ -502,108 +502,56 @@ input:focus, select:focus, textarea:focus{
   .btn{ width: 100%; }
   .drawer-nav a{ padding: 14px 12px; }
 }
+
+
 /* =========================
-   HERO – WOOD OVERLAY + LOGO
-   ========================= */
-
-.hero{
-  position: relative;
-  overflow: hidden;
-  background: url("img/hero.jpg") center/cover no-repeat;
-  color: #FFFFFF;
-}
-
-/* Wood overlay */
-.hero-wood .hero-overlay{
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      180deg,
-      rgba(31,63,54,.55),   /* tumšs zaļš augšā */
-      rgba(139,106,79,.55) /* wood apakšā */
-    );
-  z-index: 1;
-}
-/* HERO container override */
-.hero .container{
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-}
-/* Viss hero saturs virs overlay */
-.hero > *{
-  position: relative;
-  z-index: 2;
-}
-
-/* Logo stūrī */
-.hero-brand{
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.hero-logo{
-  font-weight: 800;
-  letter-spacing: .14em;
-  font-size: 18px;
-  color: #FFFFFF;
-}
-
-.hero-tagline{
-  font-size: 11px;
-  letter-spacing: .18em;
-  opacity: .85;
-}
-
-/* Mobile pielāgojums */
-@media (max-width: 900px){
-  .hero-brand{
-    top: 14px;
-    left: 14px;
-  }
-  .hero-logo{
-    font-size: 16px;
-  }
-}
-/* =========================
-   HERO – FULL SCREEN
+   HERO – FULL SCREEN (GRID + IMG)
 ========================= */
 
 .hero{
-  min-height: 100vh;           /* 💥 pilns ekrāns */
+  min-height: 100vh;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--line);
   display: flex;
-  align-items: stretch;
-  padding-top: 96px;           /* vieta headerim */
-  padding-bottom: 0;
-}
-
-.hero-grid{
-  flex: 1;
   align-items: center;
 }
 
+/* lai sticky header nesēž virsū */
+.header{ position: sticky; top: 0; z-index: 100; }
+.hero{ padding-top: 96px; } /* ja header ~80px */
+
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 22px;
+  align-items: center;
+  width: 100%;
+}
+
 .hero-card{
-  height: auto;           /* noņem card sajūtu */
-  min-height: 100%;
-  display: flex;
-  align-items: flex-end;  /* bilde pieskaras apakšai */
-  background: none;
-  box-shadow: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  position: relative;
 }
 
 .hero-img{
   width: 100%;
-  height: 75%;
+  height: min(72vh, 680px); /* ✅ stabils “landing” izmērs */
   object-fit: cover;
   display: block;
-  border-radius: 20px;
+  border-radius: 12px;
 }
+
+.hero-badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+
+@media (max-width: 900px){
+  .hero-grid{ grid-template-columns: 1fr; }
+  .hero{ padding-top: 84px; align-items: flex-start; }
+  .hero-img{ height: 42vh; }
+}
+
 
 /* MOBILE */
 @media (max-width: 768px){
