@@ -585,55 +585,90 @@ input:focus, select:focus, textarea:focus{
   border-radius: 0;
 }
 
-/* ======= HERO – full width + teks uz bildes ====== */
+/* =========================
+   HERO – FULL WIDTH + TEXT ON IMAGE (FINAL)
+========================= */
+
+/* Ja header augstums atšķiras, maini šeit */
+:root{ --header-h: 76px; }
 
 .hero{
   position: relative;
-  min-height: calc(100vh - 76px); /* 76px ≈ header height */
+  min-height: calc(100vh - var(--header-h));
   display: flex;
   align-items: center;
-  background: url("/img/hero_orig.jpg") center/cover no-repeat;
-  color: #FFFFFF;
+
+  /* FULL-WIDTH bilde */
+  background: url("/img/hero.jpg") center/cover no-repeat;
   border-bottom: 1px solid var(--line);
+  color: #fff;
 }
 
-/* tumšais overlay lasāmībai */
-.hero::before{
-  content: "";
+/* Overlay lasāmībai */
+.hero-overlay{
   position: absolute;
   inset: 0;
   background: linear-gradient(
     90deg,
-    rgba(0, 0, 0, .65),
-    rgba(0, 0, 0, .20)
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.30) 45%,
+    rgba(0,0,0,.08) 75%,
+    rgba(0,0,0,0) 100%
   );
   z-index: 1;
 }
 
-.hero .container{
+/* Saturs virs overlay */
+.hero-content{
   position: relative;
   z-index: 2;
+  max-width: 720px;
+  padding: 18px 0;
 }
 
-/* Hero teksts */
-.hero h1,
-.hero p,
 .hero .kicker,
-.hero .bullets li,
+.hero p,
+.hero .bullets,
 .hero .trust-text{
-  color: #fff;
+  color: rgba(255,255,255,.86);
 }
 
-/* pogas, bullets un trust */
-.hero .btn.secondary{ color: #fff; border-color: #fff; }
-.hero .btn.secondary:hover{ background: rgba(255,255,255,.15); }
+.hero h1{
+  color: #fff;
+  text-shadow: 0 10px 26px rgba(0,0,0,.35);
+}
 
-/* mobile */
-@media (max-width:900px){
+/* Trust uz bildes */
+.hero .trust-item{
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(8px);
+}
+
+/* Secondary poga uz tumša fona */
+.hero .btn.secondary{
+  color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+.hero .btn.secondary:hover{
+  background: rgba(255,255,255,.10);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  :root{ --header-h: 68px; }
+
   .hero{
-    min-height: calc(100svh - 68px);
+    min-height: calc(100svh - var(--header-h));
     align-items: flex-start;
     padding-top: 14px;
   }
-}
 
+  .hero-content{
+    max-width: 100%;
+  }
+
+  .hero .trust{
+    grid-template-columns: 1fr;
+  }
+}
