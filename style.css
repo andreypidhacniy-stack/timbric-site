@@ -525,7 +525,12 @@ input:focus, select:focus, textarea:focus{
     );
   z-index: 1;
 }
-
+/* HERO container override */
+.hero .container{
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
 /* Viss hero saturs virs overlay */
 .hero > *{
   position: relative;
