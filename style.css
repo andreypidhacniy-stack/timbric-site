@@ -520,14 +520,13 @@ input:focus, select:focus, textarea:focus{
 .header{ position: sticky; top: 0; z-index: 100; }
 .hero{ padding-top: 96px; } /* ja header ~80px */
 
-.hero-grid{
+/*.hero-grid{
   display: grid;
   grid-template-columns: 1.2fr .8fr;
   gap: 22px;
   align-items: center;
   width: 100%;
 }
-
 .hero-card{
   background: var(--card);
   border: 1px solid var(--line);
@@ -535,7 +534,6 @@ input:focus, select:focus, textarea:focus{
   padding: 16px;
   position: relative;
 }
-
 .hero-img{
   width: 100%;
   height: min(72vh, 680px); /* ✅ stabils “landing” izmērs */
@@ -543,6 +541,7 @@ input:focus, select:focus, textarea:focus{
   display: block;
   border-radius: 12px;
 }
+*/
 
 .hero-badges{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
 
@@ -585,70 +584,86 @@ input:focus, select:focus, textarea:focus{
 .hero .hero-img{
   border-radius: 0;
 }
+
 /* =========================
-   HERO – FULL SCREEN OVERRIDE
+   HERO – FULL BLEED + TEXT ON IMAGE
 ========================= */
 
 .hero{
-  min-height: 100vh;
-  padding-top: 96px;   /* header augstums */
-  padding-bottom: 0;   /* ❗ noņem apakšējo padding */
-}
-/* ===== FINAL HERO FIX ===== */
-.hero{
-  min-height: 100vh;
-  padding: 96px 0 0;        /* pārraksta visus iepriekšējos padding */
+  position: relative;
+  min-height: calc(100vh - 76px);   /* 76px = aptuveni header augstums */
   display: flex;
-  align-items: stretch;
-}
+  align-items: center;
 
-.hero-grid{
-  width: 100%;
-  min-height: calc(100vh - 96px);
-  align-items: stretch;
-}
-
-.hero .hero-card{
-  background: transparent;
-  border: 0;
-  padding: 0;
-}
-
-.hero .hero-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;         /* vai 20px, ja gribi */
-}
-/* ===== HERO: full screen zem sticky header ===== */
-:root{ --header-h: 76px; }  /* ja vajag, pamaini uz 72/80/84 */
-
-.hero{
-  min-height: calc(100vh - var(--header-h));
-  padding: 0;                 /* svarīgi: noņem 56px 0 konfliktu */
-  display: flex;
-  align-items: stretch;
+  background: url("img/hero.jpg") center/cover no-repeat;
+  color: #fff;
   border-bottom: 1px solid var(--line);
 }
 
-.hero-grid{
-  width: 100%;
-  min-height: calc(100vh - var(--header-h));
-  align-items: stretch;
+/* tumšā pārklājuma slānis lasāmībai */
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.35) 40%,
+    rgba(0,0,0,.10) 70%,
+    rgba(0,0,0,.00) 100%
+  );
+  z-index: 1;
 }
 
-.hero .hero-card{
-  background: transparent;
-  border: 0;
-  padding: 0;
-  display: flex;
-  align-items: stretch;
+.hero-content{
+  position: relative;
+  z-index: 2;
+  max-width: 720px;  /* lai teksts nelīst pārāk plats */
+  padding: 22px 0;
 }
 
-.hero .hero-img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* teksta krāsas hero zonā */
+.hero .kicker,
+.hero p,
+.hero .bullets,
+.hero .trust-text{
+  color: rgba(255,255,255,.86);
+}
+
+.hero h1{
+  color: #fff;
+  text-shadow: 0 8px 22px rgba(0,0,0,.35);
+}
+
+/* trust kastes uz bildes */
+.hero .trust-item{
+  background: rgba(0,0,0,.22);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+}
+
+/* secondary poga uz tumša fona */
+.hero .btn.secondary{
+  color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+.hero .btn.secondary:hover{
+  background: rgba(255,255,255,.10);
+}
+
+/* MOBILE */
+@media (max-width: 900px){
+  .hero{
+    min-height: calc(100svh - 68px);
+    align-items: flex-start;
+    padding-top: 18px;
+  }
+
+  .hero-content{
+    max-width: 100%;
+  }
+
+  /* lai trust uz mobile neizplešas par 3 kolonnām */
+  .hero .trust{
+    grid-template-columns: 1fr;
+  }
 }
