@@ -573,25 +573,31 @@ input:focus, select:focus, textarea:focus{
 .hero{
   min-height: 100vh;           /* 💥 pilns ekrāns */
   display: flex;
-  align-items: center;
+  align-items: stretch;
   padding-top: 96px;           /* vieta headerim */
-  padding-bottom: 48px;
+  padding-bottom: 0;
 }
 
 .hero-grid{
+  flex: 1;
   align-items: center;
 }
 
 .hero-card{
-  height: min(72vh, 640px);    /* liela bilde kā timberex */
-  overflow: hidden;
+  height: auto;           /* noņem card sajūtu */
+  min-height: 100%;
+  display: flex;
+  align-items: flex-end;  /* bilde pieskaras apakšai */
+  background: none;
+  box-shadow: none;
 }
 
 .hero-img{
   width: 100%;
-  height: 100%;
+  height: 75%;
   object-fit: cover;
   display: block;
+  border-radius: 20px;
 }
 
 /* MOBILE */
@@ -603,5 +609,6 @@ input:focus, select:focus, textarea:focus{
 
   .hero-card{
     height: 42vh;
+    border-radius: 16px;
   }
 }
