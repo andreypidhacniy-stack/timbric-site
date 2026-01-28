@@ -621,3 +621,34 @@ input:focus, select:focus, textarea:focus{
   display: block;
   border-radius: 0;         /* vai 20px, ja gribi */
 }
+/* ===== HERO: full screen zem sticky header ===== */
+:root{ --header-h: 76px; }  /* ja vajag, pamaini uz 72/80/84 */
+
+.hero{
+  min-height: calc(100vh - var(--header-h));
+  padding: 0;                 /* svarīgi: noņem 56px 0 konfliktu */
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-grid{
+  width: 100%;
+  min-height: calc(100vh - var(--header-h));
+  align-items: stretch;
+}
+
+.hero .hero-card{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  display: flex;
+  align-items: stretch;
+}
+
+.hero .hero-img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
