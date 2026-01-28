@@ -599,7 +599,7 @@ input:focus, select:focus, textarea:focus{
   align-items: center;
 
   /* FULL-WIDTH bilde */
-  background: url("/img/hero.jpg") center/cover no-repeat;
+  background: url("/img/hero_orig.jpg") center/cover no-repeat;
   border-bottom: 1px solid var(--line);
   color: #fff;
 }
