@@ -367,7 +367,15 @@
         <p class="lead">Atstāj kontaktus — sazināsimies ar cenu un termiņu.</p>
 
         <!-- Netlify forma (strādās bez backend, kad būs deploy uz Netlify) -->
-        <form class="form" name="piedavajums" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        
+        <form
+  class="form"
+  name="piedavajums"
+  method="POST"
+  action="/thanks.html"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+          
           <input type="hidden" name="form-name" value="piedavajums" />
           <p class="hidden">
             <label>Don’t fill this out: <input name="bot-field" /></label>
@@ -381,7 +389,9 @@
 
             <label>
               Telefons vai e-pasts
-              <input name="contact" type="text" placeholder="+371... / epasts@..." required />
+              <input name="email" type="email" placeholder="E-pasts" />
+<input name="phone" type="tel" placeholder="+371..." />
+
             </label>
           </div>
 
